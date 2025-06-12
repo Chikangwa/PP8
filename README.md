@@ -134,8 +134,20 @@ In this exercise you will:
 #### Reflection Questions
 
 1. **How do you pass a file name to a program using the `-i` and `-o` options?**
+   -i bedeutet: Eingabedatei (input)
+   -o bedeutet: Ausgabedatei (output)
+   Das Programm liest dann eingabe.txt und schreibt in ausgabe.txt.
 2. **What are typical use cases for parameters versus flags? How do the differ from one another?**
-
+  Flags schalten etwas ein oder aus.
+ Flag (Schalter)	Z.B. -a, -v	
+Hat keinen Wert	
+Aktiviert etwas (z.B. „an/aus“)	
+Beispiel: -v für „verbose“
+  Parameter geben Werte oder Dateien an.
+Parameter (mit Wert)
+Z.B. -n 42, -i datei.txt
+Hat einen Wert
+Aktiviert etwas (z.B. „an/aus“)
 ---
 
 ### Task 3: Interactive Input with `scanf` & `fscanf`
@@ -218,6 +230,15 @@ In this exercise you will:
 #### Reflection Question
 
 * **What is the difference between redirecting to stdin and explicitly opening a file with `fopen`?**
+ Die Shell gibt der Eingabe (stdin) den Inhalt einer Datei.
+Im Code muss man keine Datei öffnen
+ –man liest einfach mit fgets(buf, BUF_SIZE, stdin);.
+
+mit fopen gibt im Code direkt an, welche Datei man öffnen will
+So hat das Programm mehr Kontrolle. mehrere Dateien können geöffnet oder den Dateinamen über Argumente übergeben.
+
+Gut geeignet für richtige Programme, die flexibel mit Dateien arbeiten sollen.
+
 
 ---
 
@@ -408,6 +429,17 @@ In this exercise you will:
 #### Reflection Question
 
 * **Explain in your own words what the encryption and decryption processes are doing in both ciphers.**
+CAESAR CIPHERS
+Bei der Verschlüsselung wird jeder Buchstabe im Text um eine feste Anzahl von Stellen im Alphabet nach vorne verschoben.
+Bei der Entschlüsselung wird genau die gleiche Anzahl von Stellen wieder zurück verschoben.
+Zum Beispiel: Mit Shift 3 wird aus 'A' ein 'D', und bei der Entschlüsselung wird aus 'D' wieder 'A'.
+
+XOR CIPHERS
+Bei der Verschlüsselung wird jedes Zeichen des Textes bitweise mit einem Schlüssel (einem Byte) 
+verknüpft, indem eine XOR-Operation angewendet wird.
+Die Entschlüsselung macht genau dasselbe: Die XOR-Verknüpfung mit dem gleichen Schlüssel stellt den 
+ursprünglichen Text wieder her, weil XOR zweimal mit dem gleichen Wert den Ursprungswert zurückgibt.
+
 
 ---
 
